@@ -26,4 +26,6 @@ else {
     console.log("x has been defined.");
 }
 
+console.log(undefined / 5);
+
 console.log(y); // Error: Variable y is not defined. That is different as undefined. In this case, y was never declared. Undefined means, it was declared, but no value was ever assigned to it.
