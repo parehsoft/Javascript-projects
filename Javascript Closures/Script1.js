@@ -10,6 +10,6 @@ function makeMultiplier(multiplier) {
 }
 
 var doubleAll = makeMultiplier(2); // Now when "function (x)" gets returned to the caller, so "doubleAll" variable is now equal to "function (x)". And on the next line we actually execute "doubleAll", so "function (x)" is now finaly being executed, that means it gets it execution environment.
-console.log(doubleAll(10)); // But how it knows what the multiplier variable is as makeMultiplier function is no longer in execution stack, it's done, it was executed before and it returned "function (x)" to variable "doubleAll" on line before. It's because of Javascript closures.
-// Javascript preserved it's outer lexical environment. So "multiplier variable" is still sitting in memory outside of lexical scope of "function (x)".
+console.log(doubleAll(10)); // But how it knows what the multiplier variable is, as makeMultiplier function is no longer in execution stack, it's done, it was executed before and it returned "function (x)" to variable "doubleAll" on line before. It's because of Javascript closures.
+// Javascript preserved it's outer lexical environment. So "multiplier" variable is still sitting in memory outside of lexical scope of "function (x)".
 /*That's how closures work.*/
