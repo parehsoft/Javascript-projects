@@ -1,4 +1,4 @@
-/** DOM Manipulation */
+/** DOM Manipulation, Unobstrusive event binding, "event" argument */
 
 // This could be wrapped also inside of event handler of "DOMObjectLoaded".
 function SayHello(event) {
@@ -17,5 +17,13 @@ function SayHello(event) {
     this.textContent = "Said it!"; // "This" pointer will point to the element which executed this (SayHello) function.
 }
 
+function ShowCoordinates(event) {
+    if (event.shiftKey === true) {
+        console.log("x: " + event.clientX);
+        console.log("y: " + event.clientY);
+    }
+}
+
 // Unobstrusive event binding
-document.querySelector("button").onclick = SayHello;
+document.querySelector("button").onclick   = SayHello;
+document.querySelector("body").onmousemove = ShowCoordinates;
